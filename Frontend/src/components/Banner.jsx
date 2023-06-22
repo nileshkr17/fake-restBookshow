@@ -4,8 +4,8 @@ import Slider from "./Slider";
 
 const Banner = () => {
   return (
-    <div className="bg-black w-full h-screen py-25 text-white">
-      <div className="max-w-[1240px] mx-auto ">
+    <div className="bg-black w-full h-screen  text-white border border-black ">
+      <div className="max-w-[1240px] mx-auto mt-10 p-20">
         {/* Movie banner for recent movies */}
         <div className="grid grid-cols-1 gap-4 ">
           {/* Latest movies slider */}
@@ -16,10 +16,9 @@ const Banner = () => {
       </div>
 
       {/* Movie banner for upcoming movies */}
-      <div className="max-w-[1240px] mx-auto mt-10  p-4  ">
-        {/* Screeing patners name */}
-        <div className="grid grid-cols-4 gap-4 ">
-          <div className="flex items-center justify-center">
+      {/* <div className="w-100%  mx-auto mt-10 ">
+        <div className="grid grid-cols-4 gap-4  p-20 bg-[url('https://e0.pxfuel.com/wallpapers/665/654/desktop-wallpaper-black-low-poly-background-triangles-patterns-low-poly-textures-geometric-shapes-background-with-triangles-3d-textures-geometric-textures-black-backgrounds-triangles-geometric-patterns.jpg')] ">
+          <div className="flex  items-center justify-center  ">
             <h2 className="text-2xl font-bold text-white">
               Screening Partners
             </h2>
@@ -46,7 +45,7 @@ const Banner = () => {
             />
             </div>
             </div>
-       </div>
+       </div> */}
     </div>
   );
 };
