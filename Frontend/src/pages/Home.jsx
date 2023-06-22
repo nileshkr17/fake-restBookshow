@@ -1,8 +1,14 @@
 import React from 'react'
-
+import Banner from '../components/Banner'
+import Latest from '../components/Latest'
+import Partner from '../components/Partner'
 const Home = () => {
   return (
-    <div className='bg-red-900 w-full py-25'>Home</div>
+   <>
+    <Banner />
+      <Partner/>
+      <Latest/>
+   </>
   )
 }
 

@@ -31,7 +31,7 @@ const Latest = () => {
         rating: 4.5,
         description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
       },
-    // Rest of the movie data
+   
   ];
 
   const handleMovieClick = (id) => {

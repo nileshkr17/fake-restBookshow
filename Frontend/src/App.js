@@ -13,11 +13,7 @@ function App() {
   return (
     <>
       <Nav />
-      <Banner />
-      <Partner/>
-      <Latest/>
       <Allrouter />
-      <Buy></Buy>
       <Footer/>
     </>
   );

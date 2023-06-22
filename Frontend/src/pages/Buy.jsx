@@ -1,6 +1,3 @@
-// /**
-
-
 import './Buy.css'
 import React, { useState } from 'react'
 import clsx from 'clsx'
@@ -35,7 +32,7 @@ export default function Buy() {
  const [selectedSeats, setSelectedSeats] = useState([])
 
  return (
-   <div className="Buy">
+   <div className="Buy ">
      <Movies
        movie={selectedMovie}
        onChange={movie => {
@@ -73,7 +70,7 @@ export default function Buy() {
 
 function Movies({ movie, onChange }) {
  return (
-   <div className="Movies">
+   <div className="Movies ">
      <label htmlFor="movie">Pick a movie</label>
      <select
        id="movie"
@@ -94,7 +91,7 @@ function Movies({ movie, onChange }) {
 
 function ShowCase() {
  return (
-   <ul className="ShowCase">
+   <ul className="ShowCase ">
      <li>
        <span className="seat" /> <small>N/A</small>
      </li>
@@ -121,7 +118,7 @@ function Cinema({ movie, selectedSeats, onSelectedSeatsChange }) {
  }
 
  return (
-   <div className="Cinema">
+   <div className="Cinema ">
      <div className="screen" />
 
      <div className="seats">
