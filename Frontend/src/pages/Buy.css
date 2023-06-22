@@ -62,7 +62,7 @@
   perspective: 400px;
 
   display: grid;
-  place-items: center;
+  place-items: left;
   grid-gap: 24px;
 }
 
@@ -89,6 +89,9 @@
   margin-right: 12px;
 }
 
+.seatno{
+  margin-right: 10px;
+}
 .Cinema .seats .seat:not(.occupied):hover,
 .Cinema .seats .seat:not(.occupied):focus {
   cursor: pointer;

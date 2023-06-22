@@ -9,24 +9,24 @@
     },
     {
       "id": 2,
-      "title": "Movie 2",
-      "imageUrl": "https://example.com/movie2.jpg",
+      "title": "Bloody Daddy",
+      "imageUrl": "https://india.postsen.com/content/uploads/2023/06/09/41ec73e785.jpg",
       "details": "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
-      "trailerUrl": "https://example.com/movie2-trailer"
+      "trailerUrl": "https://youtu.be/O1vDPCGygkQ"
     },
     {
       "id": 3,
-      "title": "Movie 3",
-      "imageUrl": "https://example.com/movie3.jpg",
+      "title": "Evil Deed Rise",
+      "imageUrl": "https://imgnew.outlookindia.com/uploadimage/library/16_9/16_9_5/IMAGE_1683272163.jpg",
       "details": "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
-      "trailerUrl": "https://example.com/movie3-trailer"
+      "trailerUrl": "https://youtu.be/BqQNO7BzN08"
     },
     {
       "id": 4,
-      "title": "Movie 4",
-      "imageUrl": "https://example.com/movie4.jpg",
+      "title": "Midnight",
+      "imageUrl": "https://www.hancinema.net/photos/photo1348009.jpg",
       "details": "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
-      "trailerUrl": "https://example.com/movie4-trailer"
+      "trailerUrl": "https://youtu.be/3Ap4ww9Ap-0"
     },
     {
       "id": 5,

@@ -54,8 +54,18 @@ export default function Buy() {
        You have selected <span className="count">{selectedSeats.length}</span>{' '}
        seats for the price of{' '}
        <span className="total">
-         {selectedSeats.length * selectedMovie.price}$
+       ₹{selectedSeats.length * selectedMovie.price}
        </span>
+       <div className="seatno">
+          {selectedSeats.length ? (
+            <span>
+              Seat No: {selectedSeats.join(', ')}
+            </span>
+          ) : (
+            <h4>Seats not selected</h4>
+          )}
+        </div>
+       
      </p>
    </div>
  )
@@ -74,7 +84,7 @@ function Movies({ movie, onChange }) {
      >
        {movies.map(movie => (
          <option key={movie.name} value={movie.name}>
-           {movie.name} (${movie.price})
+           {movie.name} (₹{movie.price})
          </option>
        ))}
      </select>
