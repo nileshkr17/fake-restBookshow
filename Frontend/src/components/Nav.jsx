@@ -26,8 +26,8 @@ const Nav = () => {
   ];
 
   return (
-    <div className="bg-black p-4">
-      <div className="max-w-[1240px] py-2 flex justify-between items-center mx-auto">
+    <div className="bg-black p-4 ">
+      <div className="max-w-[1240px] py-2 flex justify-between items-center mx-auto ">
         <div className="flex items-center space-x-2">
           <span className="text-3xl text-red-500 hover:text-red-600 hover:cursor-pointer font-bold">
           <BiMoviePlay className="inline text-4xl" />MovieFlix 
