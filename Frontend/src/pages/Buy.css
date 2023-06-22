@@ -8,8 +8,14 @@
 
 .parent {
   display: flex;
-  width: 60%;
+  width: 90%;
+  border: red solid 1px;
 }
+.seat.occupied {
+  background-color: red;
+  cursor: not-allowed;
+}
+
 
 .child1 {
   width: 100%;
@@ -69,7 +75,7 @@
 
 .Cinema .seats {
   display: grid;
-  grid-gap: 16px;
+  grid-gap: 19px;
   width: 100%;
   grid-template-columns: repeat(8, min-content);
   justify-content: center;

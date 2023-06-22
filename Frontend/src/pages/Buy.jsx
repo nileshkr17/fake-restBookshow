@@ -1,4 +1,6 @@
 import React, { useState } from 'react';
+import DatePicker from 'react-datepicker';
+import 'react-datepicker/dist/react-datepicker.css';
 import clsx from 'clsx';
 import '../pages/Buy.css';
 
@@ -30,21 +32,43 @@ const seats = Array.from({ length: 8 * 8 }, (_, i) => i);
 export default function Buy() {
   const [selectedMovie, setSelectedMovie] = useState(movies[0]);
   const [selectedSeats, setSelectedSeats] = useState([]);
+  const [selectedDateTime, setSelectedDateTime] = useState(null);
+  const [customerName, setCustomerName] = useState('');
+  const [pin, setPin] = useState('');
 
   function handleSelectedState(seat) {
     const isSelected = selectedSeats.includes(seat);
+    const isOccupied = selectedMovie.occupied.includes(seat);
+
+    if (isOccupied) {
+      return; // Exit the function if the seat is occupied
+    }
+
     if (isSelected) {
       setSelectedSeats(selectedSeats.filter(selectedSeat => selectedSeat !== seat));
     } else {
-      setSelectedSeats([...selectedSeats, seat]);
+      if (selectedSeats.length < 4) {
+        setSelectedSeats([...selectedSeats, seat]);
+      } else {
+        alert('You cannot select more than 4 seats.');
+      }
     }
   }
 
-  // Function to handle the next page navigation
-  function handleNextPage() {
-    // Perform necessary actions to proceed to the next page
-    console.log('Proceeding to the next page...');
-  }
+  const handleCustomerDetails = () => {
+    if (customerName && pin === '123') {
+      localStorage.setItem('customerName', JSON.stringify(customerName));
+      localStorage.setItem('pin', JSON.stringify(pin));
+      localStorage.setItem('movieName', JSON.stringify(selectedMovie.name));
+      localStorage.setItem('seatNumber', JSON.stringify(selectedSeats.join(', ')));
+      localStorage.setItem('time', JSON.stringify(selectedDateTime ? selectedDateTime.toString() : null));
+
+      // Redirect to the ticket page
+      window.location.href = '/ticket';
+    } else {
+      alert('Please enter a valid customer name and pin (123)');
+    }
+  };
 
   return (
     <div className="parent grid justify-center mx-auto my-10">
@@ -80,6 +104,9 @@ export default function Buy() {
           <li className="mx-2">
             <span className="seat occupied" /> <small>Occupied</small>
           </li>
+          <li className="mx-2">
+            <span className="seat disabled" /> <small>Disabled</small>
+          </li>
         </ul>
         <div className="Cinema mb-6">
           <div className="screen bg-white h-12 w-full transform rotate-x-12 scale-110 rounded-lg shadow-md mb-4" />
@@ -87,46 +114,60 @@ export default function Buy() {
             {seats.map(seat => {
               const isSelected = selectedSeats.includes(seat);
               const isOccupied = selectedMovie.occupied.includes(seat);
+
+              const isDisabled = selectedSeats.length >= 4 && !isSelected;
+
               return (
                 <span
                   tabIndex="0"
                   key={seat}
-                  className={clsx('seat', isSelected && 'selected', isOccupied && 'occupied')}
-                  onClick={isOccupied ? null : () => handleSelectedState(seat)}
-                  onKeyPress={
-                    isOccupied
-                      ? null
-                      : e => {
-                          if (e.key === 'Enter') {
-                            handleSelectedState(seat);
-                          }
-                        }
-                  }
+                  className={clsx(
+                    'seat',
+                    isSelected && 'selected',
+                    isOccupied && 'occupied',
+                    isDisabled && 'disabled'
+                  )}
+                  onClick={() => {
+                    if (!isDisabled) {
+                      handleSelectedState(seat);
+                    }
+                  }}
+                  onKeyPress={e => {
+                    if (e.key === 'Enter' && !isDisabled) {
+                      handleSelectedState(seat);
+                    }
+                  }}
+                  role="button"
+                  aria-disabled={isOccupied || isDisabled}
+                  aria-label={`Seat ${seat}`}
                 />
               );
             })}
           </div>
         </div>
         <p className="info">
-          You have selected <span className="count text-green-500">{selectedSeats.length}</span> seat{selectedSeats.length !== 1 && 's'} for the price of{' '}
-          <span className="total text-green-500">₹{selectedSeats.length * selectedMovie.price}</span>
+         
           <div className="seatno mr-4">
             {selectedSeats.length ? (
-              <span>Seat No: {selectedSeats.join(', ')}</span>
+              <div> Selected <span className="count text-green-500 m-1"> {selectedSeats.length}</span> seat
+              {selectedSeats.length !== 1 && 's'} for the price of{' '}
+              <span className="total text-green-500 m-1">₹{selectedSeats.length * selectedMovie.price}</span>
+              <br/> <span>Seat No: {selectedSeats.join(', ')}</span></div>
+              
             ) : (
-              <h4>Seats not selected</h4>
+              <h4 className='text-orange-500'>*Seats not selected</h4>
             )}
           </div>
         </p>
       </div>
 
-      <div class="child2 bg-gray-100 p-4 rounded border border-black">
-  <h2 class="text-lg font-bold mb-2">Selected Tickets</h2>
+      <div className="child2 bg-gray-100 p-4 rounded border border-black">
+  <h2 className="text-lg font-bold mb-2">Selected Tickets</h2>
   {selectedSeats.length > 0 ? (
-    <ul class="selected-tickets-list">
+    <ul className="selected-tickets-list flex flex-wrap">
       {selectedSeats.map((seat, index) => (
-        <li key={seat} class="mb-2">
-          <span class="font-bold">Seat No:</span> {seat}
+        <li key={seat} className="mb-2 mr-2">
+          <span className="font-bold">Seat No:</span> {seat}
         </li>
       ))}
     </ul>
@@ -134,23 +175,62 @@ export default function Buy() {
     <p>No tickets selected</p>
   )}
   {selectedSeats.length > 0 && (
-    <div class="info">
-      <span class="count font-bold">Selected Seats:</span>
-      <span class="total font-bold">{selectedSeats.length}</span>
+    <div className="info">
+      <span className="count font-bold">Selected Seats:</span>
+      <span className="total font-bold">{selectedSeats.length}</span>
     </div>
   )}
   {selectedSeats.length > 0 && (
-    <div class="info">
-      <span class="count font-bold">Total Amount:</span>
-      <span class="total font-bold">₹{selectedSeats.length * selectedMovie.price}</span>
+    <div className="info">
+      <span className="count font-bold">Total Amount:</span>
+      <span className="total font-bold">₹{selectedSeats.length * selectedMovie.price}</span>
     </div>
   )}
 
-  <button
-    class="mt-4 bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded"
-    onClick={handleNextPage}
-  >
-    Proceed to Next Page
+  <div className="date-time-picker mt-4">
+    <label htmlFor="datetime" className="block font-bold mb-2">
+      Date and Time
+    </label>
+    <DatePicker
+      id="datetime"
+      selected={selectedDateTime}
+      onChange={(date) => setSelectedDateTime(date)}
+      showTimeSelect
+      timeFormat="HH:mm"
+      timeIntervals={15}
+      dateFormat="MMMM d, yyyy h:mm aa"
+      placeholderText="Select Date and Time"
+      className="p-2 border rounded"
+    />
+  </div>
+
+  <div className="customer-details mt-4">
+    <label htmlFor="customerName" className="block font-bold mb-2">
+      Customer Name
+    </label>
+    <input
+      type="text"
+      id="customerName"
+      value={customerName}
+      onChange={(e) => setCustomerName(e.target.value)}
+      placeholder="Enter your name"
+      className="p-2 border rounded w-full"
+    />
+    <label htmlFor="pin" className="block font-bold mt-2 mb-2">
+      PIN (123)
+    </label>
+    <input
+      type="password"
+      id="pin"
+      value={pin}
+      onChange={(e) => setPin(e.target.value)}
+      placeholder="Enter PIN"
+      className="p-2 border rounded w-full"
+    />
+  </div>
+
+  <button className="btn-confirm mt-4" onClick={handleCustomerDetails}>
+    Confirm Booking
   </button>
 </div>
 
