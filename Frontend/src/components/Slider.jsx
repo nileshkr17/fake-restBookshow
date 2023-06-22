@@ -50,41 +50,34 @@ const Slider = () => {
     );
   };
 
-//   const goToPreviousSlide = () => {
-//     setCurrentSlide((prevSlide) =>
-//       prevSlide === 0 ? movies.length - 1 : prevSlide - 1
-//     );
-//   };
-
   return (
-    <div className="relative w-full h-80 lg:h-96">
-      <div className="absolute inset-0 bg-black bg-opacity-50 blur"></div>
-      <div className="max-w-[1240px] mx-auto h-full">
-       
-        <div className="relative w-full h-full flex items-center justify-center">
-          <img
-            src={movies[currentSlide].imageUrl}
-            alt={movies[currentSlide].title}
-            className="object-cover max-h-full max-w-full transition-opacity duration-500"
-          />
-          <div className="absolute inset-0 flex items-center justify-center opacity-0 hover:opacity-100 transition-opacity duration-300">
-            <div className="text-center">
-              <h2 className="text-lg font-bold text-white">{movies[currentSlide].title}</h2>
-              <p className="text-sm text-white">{movies[currentSlide].details}</p>
-              <a
-                href={movies[currentSlide].trailerUrl}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="inline-block mt-4 px-4 py-2 bg-red-500 text-white rounded-md"
-              >
-                Play Trailer
-              </a>
-            </div>
-          </div>
+    <div className="relative w-full h-80 lg:h-96 z-10">
+  <div className="absolute inset-0 bg-black bg-opacity-50 blur"></div>
+  <div className="max-w-[1240px] mx-auto h-full">
+    <div className="relative w-full h-full flex items-center justify-center">
+      <img
+        src={movies[currentSlide].imageUrl}
+        alt={movies[currentSlide].title}
+        className="object-cover max-h-full max-w-full transition-opacity duration-500"
+      />
+      <div className="absolute inset-0 flex items-center justify-center opacity-0 hover:opacity-100 transition-opacity duration-300">
+        <div className="text-center">
+          <h2 className="text-lg font-bold text-white">{movies[currentSlide].title}</h2>
+          <p className="text-sm text-white">{movies[currentSlide].details}</p>
+          <a
+            href={movies[currentSlide].trailerUrl}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="inline-block mt-4 px-4 py-2 bg-red-500 text-white rounded-md"
+          >
+            Play Trailer
+          </a>
         </div>
-        
       </div>
     </div>
+  </div>
+</div>
+
   );
 };
 
