@@ -30,7 +30,7 @@ const Nav = () => {
       <div className="max-w-[1240px] py-2 flex justify-between items-center mx-auto">
         <div className="flex items-center space-x-2">
           <span className="text-3xl text-red-500 hover:text-red-600 hover:cursor-pointer font-bold">
-            MovieFlix <BiMoviePlay className="inline text-4xl" />
+          <BiMoviePlay className="inline text-4xl" />MovieFlix 
           </span>
           <div className="hidden md:block">
             <ul className="flex space-x-6 text-red-500 font-semibold">
