@@ -1,0 +1,29 @@
+/* Navbar.css */
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    flex-direction: row;
+    align-items: center;
+    background-color: #333;
+    color: #fff;
+    padding: 10px;
+  }
+  
+  .navbar-logo a {
+    font-size: 1.5rem;
+    color: #fff;
+    text-decoration: none;
+  }
+  
+  .navbar-links a {
+    margin-right: 10px;
+    color: #fff;
+    text-decoration: none;
+  }
+  
+  .navbar-account a {
+    margin-right: 10px;
+    color: #fff;
+    text-decoration: none;
+  }
+  
