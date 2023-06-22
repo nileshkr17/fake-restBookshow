@@ -9,28 +9,28 @@ const Slider = () => {
       title: "The Flash",
       imageUrl: "https://images.thedirect.com/media/article_full/the-flash-movie-poster-2023-batman-ben-affleck-batfleck-dc-dcu.jpg",
       details: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
-      trailerUrl: "https://www.youtube.com/watch?v=12345"
+      trailerUrl: "https://youtu.be/9vwaD9cHLNw"
     },
     {
       id: 2,
       title: "Bloody Daddy",
       imageUrl: "https://india.postsen.com/content/uploads/2023/06/09/41ec73e785.jpg",
       details: "Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
-      trailerUrl: "https://www.youtube.com/watch?v=67890"
+      trailerUrl: "https://youtu.be/O1vDPCGygkQ"
     },
     {
       id: 3,
       title: "Evil Deed Rise",
       imageUrl: "https://imgnew.outlookindia.com/uploadimage/library/16_9/16_9_5/IMAGE_1683272163.jpg",
       details: "Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris.",
-      trailerUrl: "https://www.youtube.com/watch?v=abcde"
+      trailerUrl: "https://youtu.be/BqQNO7BzN08"
     },
     {
       id: 4,
       title: "Midnight",
       imageUrl: "https://www.hancinema.net/photos/photo1348009.jpg",
       details: "Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.",
-      trailerUrl: "https://www.youtube.com/watch?v=fghij"
+      trailerUrl: "https://youtu.be/3Ap4ww9Ap-0"
     },
   ];
 

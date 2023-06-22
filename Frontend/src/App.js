@@ -5,6 +5,8 @@ import Nav from "./components/Nav";
 import Banner from "./components/Banner";
 import Footer from './components/Footer';
 import Latest from "./components/Latest";
+import Buy from "./pages/Buy";
+
 
 function App() {
   return (
@@ -13,6 +15,7 @@ function App() {
       <Banner />
       <Latest/>
       <Allrouter />
+      <Buy></Buy>
       <Footer/>
     </>
   );
