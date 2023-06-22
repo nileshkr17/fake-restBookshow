@@ -1,12 +1,12 @@
 import './App.css';
 import Landing from './pages/Landing';
-import Navbar from './components/Nav';
+import Nav from './components/Nav';
 import Footer from './components/Footer'
 
 function App() {
   return (
     <div className="App">
-      <Navbar/>
+      <Nav/>
       <Footer/>
 </div>
 
