@@ -16,8 +16,8 @@ const Banner = () => {
       </div>
 
       {/* Movie banner for upcoming movies */}
-      {/* <div className="w-100%  mx-auto mt-10 ">
-        <div className="grid grid-cols-4 gap-4  p-20 bg-[url('https://e0.pxfuel.com/wallpapers/665/654/desktop-wallpaper-black-low-poly-background-triangles-patterns-low-poly-textures-geometric-shapes-background-with-triangles-3d-textures-geometric-textures-black-backgrounds-triangles-geometric-patterns.jpg')] ">
+      <div className="w-100%  mx-auto mt-10 ">
+        <div className="grid grid-cols-4 gap-4  p-20">
           <div className="flex  items-center justify-center  ">
             <h2 className="text-2xl font-bold text-white">
               Screening Partners
@@ -45,7 +45,7 @@ const Banner = () => {
             />
             </div>
             </div>
-       </div> */}
+       </div>
     </div>
   );
 };
