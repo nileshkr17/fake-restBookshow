@@ -10,8 +10,8 @@ function App() {
   return (
     <>
       <Nav />
-      <Allrouter />
       <Banner />
+      <Allrouter />
       <Footer/>
     </>
   );
