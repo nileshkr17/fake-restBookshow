@@ -1,11 +1,12 @@
 import React from 'react';
 import './nav.css';
+import { SiBookmyshow } from "react-icons/si";
 
 const Navbar = () => {
   return (
     <nav className="navbar">
       <div className="navbar-logo">
-        <a href="/">BookMyShow</a>
+        <a icon={SiBookmyshow} href="/">BookMyShow</a>
       </div>
       <div className="navbar-links">
         <a href="/movies">Movies</a><br></br>
