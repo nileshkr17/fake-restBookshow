@@ -6,6 +6,8 @@ import React from "react";
 import { useState } from "react";
 import Banner from "./components/Banner";
 
+import Footer from './components/Footer';
+
 function App() {
   const [toggle, setToggle] = useState(false);
  
@@ -109,6 +111,7 @@ function App() {
       <button className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">
         Button
       </button>
+      <Footer/>
     </>
   );
 }
