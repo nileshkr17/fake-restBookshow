@@ -19,14 +19,14 @@ const Latest = () => {
       },
       {
         id: 1,
-        imageUrl: 'https://www.heavenofhorror.com/wp-content/uploads/2020/04/time-to-hunt-netflix-review.jpg',
+        imageUrl: 'https://static-koimoi.akamaized.net/wp-content/new-galleries/2022/04/bholaa-01-1.jpg',
         title: 'Movie 1',
         rating: 4.5,
         description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
       },
       {
         id: 1,
-        imageUrl: 'https://www.heavenofhorror.com/wp-content/uploads/2020/04/time-to-hunt-netflix-review.jpg',
+        imageUrl: 'https://m.media-amazon.com/images/M/MV5BNzJlM2NmZTItOGQyYS00MmE2LTkwZGUtNDFkNmJmZjRjZjcxXkEyXkFqcGdeQXVyMTA3MDk2NDg2._V1_FMjpg_UX1000_.jpg',
         title: 'Movie 1',
         rating: 4.5,
         description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',

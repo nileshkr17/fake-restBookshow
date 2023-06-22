@@ -4,141 +4,156 @@
       "id": 1,
       "title": "The Flash",
       "imageUrl": "https://images.thedirect.com/media/article_full/the-flash-movie-poster-2023-batman-ben-affleck-batfleck-dc-dcu.jpg",
-      "details": "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
-      "trailerUrl": "https://youtu.be/9vwaD9cHLNw"
+      "details": "Barry Allen uses his super speed to change the past, but his attempt to save his family creates a world without super heroes, forcing him to race for his life in order to save the future.",
+      "trailerUrl": "https://youtu.be/9vwaD9cHLNw",
+      "price": 250,
+      "occupied": [45,46,47,48],
+      "genre":"Superhero Action"
     },
     {
       "id": 2,
       "title": "Bloody Daddy",
       "imageUrl": "https://india.postsen.com/content/uploads/2023/06/09/41ec73e785.jpg",
-      "details": "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
-      "trailerUrl": "https://youtu.be/O1vDPCGygkQ"
+      "details": "A messed up, tenacious man faces off against cops and crime lords to save the one relationship that matters to him. father.",
+      "trailerUrl": "https://youtu.be/O1vDPCGygkQ",
+      "price": 150,
+      "occupied": [45,60,34,35],
+      "genre":"Thriller Action"
     },
     {
       "id": 3,
       "title": "Evil Deed Rise",
       "imageUrl": "https://imgnew.outlookindia.com/uploadimage/library/16_9/16_9_5/IMAGE_1683272163.jpg",
-      "details": "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
-      "trailerUrl": "https://youtu.be/BqQNO7BzN08"
+      "details": "A twisted tale of two estranged sisters whose reunion is cut short by the rise of flesh-possessing demons, thrusting them into a primal battle for survival as they face the most nightmarish version of family imaginable.",
+      "trailerUrl": "https://youtu.be/BqQNO7BzN08",
+      "price": 250,
+      "occupied": [55,56,57,58],
+      "genre":"Horror Thriller"
     },
     {
       "id": 4,
       "title": "Midnight",
       "imageUrl": "https://www.hancinema.net/photos/photo1348009.jpg",
-      "details": "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
-      "trailerUrl": "https://youtu.be/3Ap4ww9Ap-0"
+      "details": "A serial killer ruthlessly hunts down a deaf woman through the streets of South Korea after she witnesses his brutal crime.",
+      "trailerUrl": "https://youtu.be/3Ap4ww9Ap-0",
+      "price": 150,
+      "occupied": [45,46,47,48],
+      "genre":"Psychological Thriller"
     },
     {
       "id": 5,
-      "title": "Movie 5",
-      "imageUrl": "https://example.com/movie5.jpg",
-      "details": "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
-      "trailerUrl": "https://example.com/movie5-trailer"
+      "title": "Bhola",
+      "imageUrl": "https://static-koimoi.akamaized.net/wp-content/new-galleries/2022/04/bholaa-01-1.jpg ",
+      "details": "After getting out of prison with the desire to meet his daughter, Bholaa's plans are interrupted by a well-orchestrated drug bust.",
+      "trailerUrl": "https://youtu.be/K-EMszLvRIQ",
+      "price": 150,
+      "occupied": [35,46,47,38],
+      "genre":"Crime Action"
     },
     {
       "id": 6,
-      "title": "Movie 6",
-      "imageUrl": "https://example.com/movie6.jpg",
-      "details": "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
-      "trailerUrl": "https://example.com/movie6-trailer"
+      "title": "Shazam",
+      "imageUrl": "https://m.media-amazon.com/images/M/MV5BNzJlM2NmZTItOGQyYS00MmE2LTkwZGUtNDFkNmJmZjRjZjcxXkEyXkFqcGdeQXVyMTA3MDk2NDg2._V1_FMjpg_UX1000_.jpg",
+      "details": "The film continues the story of teenage Billy Batson who, upon reciting the magic word SHAZAM! is transformed into his adult Super Hero alter ego, Shazam.",
+      "trailerUrl": "https://youtu.be/Zi88i4CpHe4",
+      "price": 150,
+      "occupied": [45,46,47,48],
+      "genre":"Superhero Action"
     },
     {
       "id": 7,
-      "title": "Movie 7",
-      "imageUrl": "https://example.com/movie7.jpg",
-      "details": "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
-      "trailerUrl": "https://example.com/movie7-trailer"
+      "title": "Plane",
+      "imageUrl": "https://m.media-amazon.com/images/M/MV5BYWJkZGMxYjUtNDdkMC00MDQxLWI2M2QtZmM2ZGIyODYyZDc3XkEyXkFqcGdeQXVyMTA3MDk2NDg2._V1_.jpg",
+      "details": "A pilot finds himself caught in a war zone after he's forced to land his commercial aircraft during a terrible storm.",
+      "trailerUrl": "https://youtu.be/M25zXBIUVr0",
+      "price": 150,
+      "occupied": [25,26,27,28],
+      "genre":"Thriller Action"
     },
     {
       "id": 8,
-      "title": "Movie 8",
-      "imageUrl": "https://example.com/movie8.jpg",
-      "details": "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
-      "trailerUrl": "https://example.com/movie8-trailer"
+      "title": "Spider-Man: Across the Spider-Verse",
+      "imageUrl": "https://www.sonypicturesanimation.com/sites/default/files/styles/gallery_video/public/2022-12/SPIDER-MAN%20ACROSS%20THE%20SPIDER-VERSE_Thumb.jpg?itok=MTs3lOHh",
+      "details": "Miles Morales catapults across the Multiverse, where he encounters a team of Spider-People charged with protecting its very existence. When the heroes clash on how to handle a new threat, Miles must redefine what it means to be a hero.",
+      "trailerUrl": "https://youtu.be/shW9i6k8cB0",
+      "price": 150,
+      "occupied": [45,46,47,48],
+      "genre":"Adventure Action"
     },
     {
       "id": 9,
-      "title": "Movie 9",
-      "imageUrl": "https://example.com/movie9.jpg",
-      "details": "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
-      "trailerUrl": "https://example.com/movie9-trailer"
+      "title": "Selfie",
+      "imageUrl": "https://m.media-amazon.com/images/M/MV5BYTRjN2MzM2MtM2UzYi00YjA5LThkZDQtMThjZjFhNzIwMGM3XkEyXkFqcGdeQXVyOTI3MzI4MzA@._V1_FMjpg_UX1000_.jpg",
+      "details": "Bollywood superstar Vijay Kumar needs to obtain a new driving license from RTO officer Om Prakash Agarwal, a diehard fan of Vijay. A misunderstanding escalates into a feud which is played out in front of the entire country",
+      "trailerUrl": "https://youtu.be/lS1KScfdr70",
+      "price": 150,
+      "occupied": [45,46,47,48],
+      "genre":"Comedy Action"
+
     },
     {
       "id": 10,
-      "title": "Movie 10",
-      "imageUrl": "https://example.com/movie10.jpg",
-      "details": "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
-      "trailerUrl": "https://example.com/movie10-trailer"
+      "title": "Unlocked",
+      "imageUrl": "https://m.media-amazon.com/images/M/MV5BZDNhMTQyYzktY2NlZS00YzI0LTg3NTQtNjJhMDhmYWFmZTMyXkEyXkFqcGdeQXVyNjI4NDY5ODM@._V1_FMjpg_UX1000_.jpg",
+      "details": "A woman's life is turned upside-down when a dangerous man gets a hold of her lost cell phone and uses it to track her every move.",
+      "trailerUrl": "https://youtu.be/k8qGElYoAoU",
+      "price": 250,
+      "occupied": [45,46,47,48,49],
+      "genre":"Thriller Mystery Crime"
+
     },
     {
       "id": 11,
-      "title": "Movie 11",
-      "imageUrl": "https://example.com/movie11.jpg",
-      "details": "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
-      "trailerUrl": "https://example.com/movie11-trailer"
+      "title": "Dasara",
+      "imageUrl": "https://m.media-amazon.com/images/M/MV5BZGY5NzViZmMtZTcyNy00NTgwLTlmZWEtZTZhZjViNzdiY2QzXkEyXkFqcGdeQXVyMTUwMDg3OTQy._V1_FMjpg_UX1000_.jpg",
+      "details": "Set in the backdrop of Singareni coal mines near Godavarikhani of Telangana.",
+      "trailerUrl": "https://youtu.be/bm0vfvs4qY0",
+      "price": 200,
+      "occupied": [23,24,25,26,27],
+      "genre":"Adventure"
+
     },
     {
       "id": 12,
-      "title": "Movie 12",
-      "imageUrl": "https://example.com/movie12.jpg",
-      "details": "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
-      "trailerUrl": "https://example.com/movie12-trailer"
+      "title": "Gaslight",
+      "imageUrl": "https://m.media-amazon.com/images/M/MV5BNTcwMjUwYTQtYTRiYy00ZmNmLWFmNDQtYzQwZTExYjMzZTRiXkEyXkFqcGdeQXVyODE5NzE3OTE@._V1_FMjpg_UX1000_.jpg",
+      "details": "Misha returns to her royal family estate after 15 years to visit her estranged father, only to find him missing.",
+      "trailerUrl": "https://youtu.be/bA00GJQbS1s",
+      "price": 150,
+      "occupied": [35,36,56,57,58],
+      "genre":"Mystery Crime"
     },
     {
       "id": 13,
-      "title": "Movie 13",
-      "imageUrl": "https://example.com/movie13.jpg",
-      "details": "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
-      "trailerUrl": "https://example.com/movie13-trailer"
+      "title": "Pathaan",
+      "imageUrl": "https://m.media-amazon.com/images/M/MV5BMThkZmNlMzQtZmU4Ny00YzhkLWE5YWYtOGJjNjRjODNjMzZkXkEyXkFqcGdeQXVyODE5NzE3OTE@._V1_FMjpg_UX1000_.jpg",
+      "details": "An Indian agent races against a doomsday clock as a ruthless mercenary, with a bitter vendetta, mounts an apocalyptic attack against the country.",
+      "trailerUrl": "https://youtu.be/vqu4z34wENw",
+      "price": 200,
+      "occupied": [34,35,36,37,38],
+      "genre":"Action Thriller"
+
     },
     {
       "id": 14,
-      "title": "Movie 14",
-      "imageUrl": "https://example.com/movie14.jpg",
-      "details": "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
-      "trailerUrl": "https://example.com/movie14-trailer"
+      "title": "Vikram Vedha",
+      "imageUrl": "https://m.media-amazon.com/images/M/MV5BYTEyYjgzNmUtM2QyYi00MWMwLWExMDctZmY1NmZhNGY5MWNiXkEyXkFqcGdeQXVyOTcwMTQxMTM@._V1_FMjpg_UX1000_.jpg",
+      "details": "A tough police officer sets out to track down and kill an equally tough gangster",
+      "trailerUrl": "https://youtu.be/hpwnlr-ZHB0",
+      "price": 150,
+      "occupied": [34,35,40,23,50],
+      "genre":"Action Crime"
+
     },
     {
       "id": 15,
-      "title": "Movie 15",
-      "imageUrl": "https://example.com/movie15.jpg",
-      "details": "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
-      "trailerUrl": "https://example.com/movie15-trailer"
-    },
-    {
-      "id": 16,
-      "title": "Movie 16",
-      "imageUrl": "https://example.com/movie16.jpg",
-      "details": "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
-      "trailerUrl": "https://example.com/movie16-trailer"
-    },
-    {
-      "id": 17,
-      "title": "Movie 17",
-      "imageUrl": "https://example.com/movie17.jpg",
-      "details": "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
-      "trailerUrl": "https://example.com/movie17-trailer"
-    },
-    {
-      "id": 18,
-      "title": "Movie 18",
-      "imageUrl": "https://example.com/movie18.jpg",
-      "details": "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
-      "trailerUrl": "https://example.com/movie18-trailer"
-    },
-    {
-      "id": 19,
-      "title": "Movie 19",
-      "imageUrl": "https://example.com/movie19.jpg",
-      "details": "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
-      "trailerUrl": "https://example.com/movie19-trailer"
-    },
-    {
-      "id": 20,
-      "title": "Movie 20",
-      "imageUrl": "https://example.com/movie20.jpg",
-      "details": "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
-      "trailerUrl": "https://example.com/movie20-trailer"
-    }
+      "title": "An Action Hero",
+      "imageUrl": "https://m.media-amazon.com/images/M/MV5BMDJiOTdmMGItMmM5MC00ZTRiLWIzNjctNDE4ZTZkMWMzZTg0XkEyXkFqcGdeQXVyOTI3MzI4MzA@._V1_.jpg",
+      "details": "Youth Icon. Superstar. Action Hero. At the age of just 30, Maanav was at the peak of his career when he got caught up in an accident while filming in Haryana. Maanav, who was once a household name, is now living in hiding.",
+      "trailerUrl": "https://youtu.be/vCTt_PnWHPg",
+      "price": 200,
+      "occupied": [12,23,24,45],
+      "genre":"Action Crime"
+    }  
   ]
 }
