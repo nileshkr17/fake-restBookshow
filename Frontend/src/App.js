@@ -1,15 +1,18 @@
 import './App.css';
 import Landing from './pages/Landing';
 import Nav from './components/Nav';
+// import { Card } from './components/Card';
+import { Movies } from './components/Movies';
+import Buy from './pages/Buy';
 
 function App() {
   return (
     <div className="App">
       <Nav/>
-      <Landing/>
-      <button className="bg-violet-500 hover:bg-violet-600 active:bg-violet-700 focus:outline-none focus:ring focus:ring-violet-300 p-4 ">
-  Save changes
-</button>
+      <Movies/>
+      <div className='p-6 text-center bg-black text-white'>Seat Booking</div>
+      <Buy></Buy>
+
 </div>
   );
 }
