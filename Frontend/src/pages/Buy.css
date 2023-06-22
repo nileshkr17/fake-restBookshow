@@ -6,24 +6,18 @@
   box-sizing: border-box;
 }
 
-/* body {
-  margin: 0;
-  padding: 0;
-  font-family: 'Exo 2', sans-serif;
-  background: #222222;
-  color: white;
-  font-size: 14px;
-
-  min-height: 100vh;
-  display: grid;
-  place-items: center;
-} */
-
-.Buy {
-  text-align: center;
+.parent {
   display: flex;
-  flex-flow: column;
-  align-items: center;
+  width: 60%;
+}
+
+.child1 {
+  width: 100%;
+  margin-right: 30px;
+}
+
+.child2 {
+  width: 100%;
 }
 
 .Movies {
@@ -34,7 +28,7 @@
 .Movies select {
   appearance: none;
   background: white;
-  color:black;
+  color: black;
   font-size: 14px;
   margin-left: 12px;
   border-radius: 4px;
@@ -60,7 +54,6 @@
 .Cinema {
   margin-bottom: 18px;
   perspective: 400px;
-
   display: grid;
   place-items: left;
   grid-gap: 24px;
@@ -76,9 +69,10 @@
 
 .Cinema .seats {
   display: grid;
-  grid-gap: 6px;
+  grid-gap: 16px;
+  width: 100%;
   grid-template-columns: repeat(8, min-content);
-  align-items: center;
+  justify-content: center;
 }
 
 .Cinema .seats .seat:nth-of-type(8n + 2) {
@@ -89,9 +83,10 @@
   margin-right: 12px;
 }
 
-.seatno{
+.seatno {
   margin-right: 10px;
 }
+
 .Cinema .seats .seat:not(.occupied):hover,
 .Cinema .seats .seat:not(.occupied):focus {
   cursor: pointer;
@@ -134,7 +129,6 @@
   border-top-left-radius: 10px;
   border-top-right-radius: 10px;
   transition: transform 0.3s ease-in-out;
-
   position: relative;
   top: 1px;
 }
@@ -147,10 +141,63 @@
   background: #cfcfcf;
 }
 
+.info {
+  display: flex;
+  align-items: center;
+  margin-top: 12px;
+}
+
 .info .count {
   color: #7bc47f;
+  font-weight: bold;
+  margin-right: 6px;
 }
 
 .info .total {
   color: #7bc47f;
+  font-weight: bold;
+}
+
+.selected-tickets-list {
+  list-style-type: none;
+  padding: 0;
+}
+
+.selected-tickets-list li {
+  margin-bottom: 8px;
+}
+
+.font-bold {
+  font-weight: bold;
+}
+
+.ticket-button {
+  margin-top: 16px;
+}
+
+.ticket-button button {
+  background-color: #007bff;
+  border: none;
+  color: white;
+  padding: 8px 16px;
+  border-radius: 4px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.ticket-button button:hover {
+  background-color: #0056b3;
+}
+
+.ticket-button button:focus {
+  outline: none;
+}
+
+.total-amount {
+  font-weight: bold;
+  margin-top: 16px;
+}
+
+.child2 p {
+  margin: 8px 0;
 }
