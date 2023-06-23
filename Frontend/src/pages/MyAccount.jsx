@@ -68,12 +68,21 @@ const MyAccount = () => {
         </>
       ) : (
         // Login button
-        <button
+
+          <div className="text-center p-20">
+      <div className="text-7xl">Page Not Found</div>
+      <div className="text-7xl">404</div>
+      <div className="mt-4">
+        
+      <button
           onClick={() => loginWithRedirect()}
           className="hover:text-red-600 hover:cursor-pointer"
         >
-          Login
+        <span className="text-lg">Login</span>
         </button>
+
+      </div>
+    </div>
       )}
     </div>
   );

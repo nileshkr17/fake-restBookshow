@@ -17,7 +17,7 @@ const Partner = () => {
   ];
 
   return (
-    <div className="w-full mx-auto bg-black">
+    <div className="w-full mx-auto bg-black ">
       <div className="grid grid-cols-1 gap-4 p-20">
         <div className="flex items-center justify-center">
           <h2 className="sm:text-3xl md:text-4xl lg:text-5xl font-bold text-white">Screening Partners</h2>
