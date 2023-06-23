@@ -15,8 +15,8 @@ const Nav = () => {
       link: '/',
     },
     {
-      title: 'Pricing',
-      link: '/pricing',
+      title: 'Search',
+      link: '/search',
     },
     {
       title: 'Buy',
@@ -51,14 +51,14 @@ const Nav = () => {
           </div>
         </div>
 
-        <div className="hidden md:flex items-center space-x-4">
+        {/* <div className="hidden md:flex items-center space-x-4">
           <input
             type="text"
             className="bg-gray-800 text-gray-200 px-3 py-2 rounded-md placeholder-gray-500 focus:outline-none focus:ring focus:border-red-500"
             placeholder="Search..."
           />
           <BsSearch className="text-red-500 text-2xl cursor-pointer" />
-        </div>
+        </div> */}
         <div className="hidden md:flex items-center space-x-4">
           {isAuthenticated ? (
             <>
