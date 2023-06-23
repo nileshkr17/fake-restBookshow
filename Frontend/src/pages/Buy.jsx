@@ -1,40 +1,60 @@
-import React, { useState } from 'react';
-import DatePicker from 'react-datepicker';
-import 'react-datepicker/dist/react-datepicker.css';
-import clsx from 'clsx';
-import '../pages/Buy.css';
+import React, { useState, useEffect } from "react";
+import DatePicker from "react-datepicker";
+import "react-datepicker/dist/react-datepicker.css";
+import clsx from "clsx";
+import "../pages/Buy.css";
 
-const movies = [
-  {
-    name: 'Avenger',
-    price: 10,
-    occupied: [20, 21, 30, 1, 2, 8],
-  },
-  {
-    name: 'Joker',
-    price: 12,
-    occupied: [9, 41, 35, 11, 65, 26],
-  },
-  {
-    name: 'Toy story',
-    price: 8,
-    occupied: [37, 25, 44, 13, 2, 3],
-  },
-  {
-    name: 'the lion king',
-    price: 9,
-    occupied: [10, 12, 50, 33, 28, 47],
-  },
-];
+// const movies = [
+//   {
+//     name: 'Avenger',
+//     price: 10,
+//     occupied: [20, 21, 30, 1, 2, 8],
+//   },
+//   {
+//     name: 'Joker',
+//     price: 12,
+//     occupied: [9, 41, 35, 11, 65, 26],
+//   },
+//   {
+//     name: 'Toy story',
+//     price: 8,
+//     occupied: [37, 25, 44, 13, 2, 3],
+//   },
+//   {
+//     name: 'the lion king',
+//     price: 9,
+//     occupied: [10, 12, 50, 33, 28, 47],
+//   },
+// ];
 
 const seats = Array.from({ length: 8 * 8 }, (_, i) => i);
 
 export default function Buy() {
-  const [selectedMovie, setSelectedMovie] = useState(movies[0]);
+  const [movies, setMovies] = useState([]);
+  const [selectedMovie, setSelectedMovie] = useState(null);
+  //
   const [selectedSeats, setSelectedSeats] = useState([]);
+  //green seats are selected
   const [selectedDateTime, setSelectedDateTime] = useState(null);
-  const [customerName, setCustomerName] = useState('');
-  const [pin, setPin] = useState('');
+  // time
+  const [customerName, setCustomerName] = useState("");
+  const [pin, setPin] = useState("");
+
+  const getData = async () => {
+    try {
+      const response = await fetch(
+        "https://my-json-server.typicode.com/nileshkr17/api-bookmyshowSELF/movies"
+      );
+      const data = await response.json();
+      setMovies(data);
+    } catch (error) {
+      console.error("Error fetching movies:", error);
+    }
+  };
+
+  useEffect(() => {
+    getData();
+  }, []);
 
   function handleSelectedState(seat) {
     const isSelected = selectedSeats.includes(seat);
@@ -45,28 +65,35 @@ export default function Buy() {
     }
 
     if (isSelected) {
-      setSelectedSeats(selectedSeats.filter(selectedSeat => selectedSeat !== seat));
+      setSelectedSeats(
+        selectedSeats.filter(selectedSeat => selectedSeat !== seat)
+      );
     } else {
       if (selectedSeats.length < 4) {
         setSelectedSeats([...selectedSeats, seat]);
       } else {
-        alert('You cannot select more than 4 seats.');
+        alert("You cannot select more than 4 seats.");
       }
     }
   }
 
   const handleCustomerDetails = () => {
-    if (customerName && pin === '123') {
-      localStorage.setItem('customerName', JSON.stringify(customerName));
-      localStorage.setItem('pin', JSON.stringify(pin));
-      localStorage.setItem('movieName', JSON.stringify(selectedMovie.name));
-      localStorage.setItem('seatNumber', JSON.stringify(selectedSeats.join(', ')));
-      localStorage.setItem('time', JSON.stringify(selectedDateTime ? selectedDateTime.toString() : null));
+    if (customerName && pin === "123") {
+      localStorage.setItem("customerName", JSON.stringify(customerName));
+      localStorage.setItem("pin", JSON.stringify(pin));
+      localStorage.setItem("movieName", JSON.stringify(selectedMovie.title));
+      localStorage.setItem(
+        "seatNumber",
+        JSON.stringify(selectedSeats.join(", "))
+      );
+      localStorage.setItem(
+        "time",
+        JSON.stringify(selectedDateTime ? selectedDateTime.toString() : null)
+      );
 
       // Redirect to the ticket page
-      window.location.href = '/ticket';
+      window.location.href = "/ticket";
     }
-
   };
 
   return (
@@ -76,19 +103,23 @@ export default function Buy() {
           <label htmlFor="movie" className="mb-2">
             Pick a movie
           </label>
+
           <select
             id="movie"
-            value={selectedMovie.name}
+            value={selectedMovie ? selectedMovie.title : ""}
             onChange={e => {
-              const selectedMovie = movies.find(movie => movie.name === e.target.value);
+              const movieTitle = e.target.value;
+              const selectedMovie = movies.find(
+                movie => movie.title === movieTitle
+              );
               setSelectedSeats([]);
               setSelectedMovie(selectedMovie);
             }}
             className="p-2 border rounded"
           >
             {movies.map(movie => (
-              <option key={movie.name} value={movie.name}>
-                {movie.name} (₹{movie.price})
+              <option key={movie.id} value={movie.title}>
+                {movie.title} (₹{movie.price})
               </option>
             ))}
           </select>
@@ -112,8 +143,8 @@ export default function Buy() {
           <div className="seats grid grid-cols-8 gap-2">
             {seats.map(seat => {
               const isSelected = selectedSeats.includes(seat);
-              const isOccupied = selectedMovie.occupied.includes(seat);
-
+              const isOccupied =
+                selectedMovie && selectedMovie.occupied.includes(seat);
               const isDisabled = selectedSeats.length >= 4 && !isSelected;
 
               return (
@@ -121,10 +152,10 @@ export default function Buy() {
                   tabIndex="0"
                   key={seat}
                   className={clsx(
-                    'seat',
-                    isSelected && 'selected',
-                    isOccupied && 'occupied',
-                    isDisabled && 'disabled'
+                    "seat",
+                    isSelected && "selected",
+                    isOccupied && "occupied",
+                    isDisabled && "disabled"
                   )}
                   onClick={() => {
                     if (!isDisabled) {
@@ -132,7 +163,7 @@ export default function Buy() {
                     }
                   }}
                   onKeyPress={e => {
-                    if (e.key === 'Enter' && !isDisabled) {
+                    if (e.key === "Enter" && !isDisabled) {
                       handleSelectedState(seat);
                     }
                   }}
@@ -149,10 +180,16 @@ export default function Buy() {
             {selectedSeats.length ? (
               <div>
                 Selected
-                <span className="count text-green-500 m-1"> {selectedSeats.length}</span> seat
-                {selectedSeats.length !== 1 && 's'} for the price of{' '}
-                <span className="total text-green-500 m-1">₹{selectedSeats.length * selectedMovie.price}</span>
-                <br /> <span>Seat No: {selectedSeats.join(', ')}</span>
+                <span className="count text-green-500 m-1">
+                  {" "}
+                  {selectedSeats.length}
+                </span>{" "}
+                seat
+                {selectedSeats.length !== 1 && "s"} for the price of{" "}
+                <span className="total text-green-500 m-1">
+                  ₹{selectedSeats.length * selectedMovie.price}
+                </span>
+                <br /> <span>Seat No: {selectedSeats.join(", ")}</span>
               </div>
             ) : (
               <h4 className="text-orange-500">*Seats not selected</h4>
@@ -183,11 +220,17 @@ export default function Buy() {
         {selectedSeats.length > 0 && (
           <div className="info">
             <span className="count font-bold">Total Amount:</span>
-            <span className="total font-bold">₹{selectedSeats.length * selectedMovie.price}</span>
+            <span className="total font-bold">
+              ₹{selectedSeats.length * selectedMovie.price}
+            </span>
           </div>
         )}
 
-        {selectedSeats.length >= 4 && <p className="text-black bg-red-300 p-2 rounded">You cannot select more than 4 seats.</p>}
+        {selectedSeats.length >= 4 && (
+          <p className="text-black bg-red-300 p-2 rounded">
+            You cannot select more than 4 seats.
+          </p>
+        )}
 
         <div className="DateTime mt-6">
           <label htmlFor="datetime" className="block mb-2">
@@ -230,15 +273,22 @@ export default function Buy() {
         </div>
 
         <button
-  className={clsx('confirm-button', selectedSeats.length === 0 && 'disabled', 'py-2 px-4 mt-10 rounded bg-blue-500 text-white hover:bg-blue-600')}
-  onClick={handleCustomerDetails}
-  disabled={selectedSeats.length === 0 || selectedSeats.length > 4}
->
-  Confirm Booking
-</button>
+          className={clsx(
+            "confirm-button",
+            selectedSeats.length === 0 && "disabled",
+            "py-2 px-4 mt-10 rounded bg-blue-500 text-white hover:bg-blue-600"
+          )}
+          onClick={handleCustomerDetails}
+          disabled={selectedSeats.length === 0 || selectedSeats.length > 4}
+        >
+          Confirm Booking
+        </button>
 
-
-        {customerName && pin !== '123' && <p className="text-red-500 mt-2">Invalid pin. Please enter the correct pin (123).</p>}
+        {customerName && pin !== "123" && (
+          <p className="text-red-500 mt-2">
+            Invalid pin. Please enter the correct pin (123).
+          </p>
+        )}
       </div>
     </div>
   );
