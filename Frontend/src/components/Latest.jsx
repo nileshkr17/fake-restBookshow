@@ -38,7 +38,7 @@ const Latest = () => {
   const [newarr, setnewArr] = useState([]);
    /*getdata*/
    const getData = async () => {
-    await fetch("http://localhost:3001/movies", {
+    await fetch("https://my-json-server.typicode.com/nileshkr17/api-bookmyshowSELF/movies", {
       method: "GET",
     })
       .then(res => res.json())
