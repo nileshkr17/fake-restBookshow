@@ -70,3 +70,9 @@ To run the application locally, follow these steps:
 - Movie selection based on user location 🌍
 - Ticket generation with seat details 🎟
 - Ability to download the ticket with a user-friendly UI 💻
+
+
+
+## Contributing
+
+Contributions are welcome! If you find any issues or have suggestions for improvements, please create a new issue or submit a pull request. 🤝
