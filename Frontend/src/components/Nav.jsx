@@ -1,39 +1,46 @@
-import React, { useState } from 'react';
-import { AiOutlineMenu, AiOutlineClose } from 'react-icons/ai';
-import { BiMoviePlay } from 'react-icons/bi';
-import { BsSearch } from 'react-icons/bs';
-import { useAuth0 } from '@auth0/auth0-react';
-import { Link } from 'react-router-dom';
+// Nav.js
+import React, { useState, useEffect } from "react";
+import { AiOutlineMenu, AiOutlineClose } from "react-icons/ai";
+import { BiMoviePlay } from "react-icons/bi";
+import { BsSearch } from "react-icons/bs";
+import { useAuth0 } from "@auth0/auth0-react";
+import { Link } from "react-router-dom";
 
 const Nav = () => {
   const [toggle, setToggle] = useState(false);
+  const [darkMode, setDarkMode] = useState(localStorage.getItem("darkMode") === "true");
 
   const { loginWithRedirect, logout, isAuthenticated, user } = useAuth0();
   const navlinks = [
     {
-      title: 'Home',
-      link: '/',
+      title: "Home",
+      link: "/",
     },
     {
-      title: 'Search',
-      link: '/search',
+      title: "Search",
+      link: "/search",
     },
     {
-      title: 'Buy',
-      link: '/buy',
+      title: "Buy",
+      link: "/buy",
     },
     {
-      title: 'My Account',
-      link: '/account',
+      title: "My Account",
+      link: "/account",
     },
   ];
 
+  useEffect(() => {
+    localStorage.setItem("darkMode", darkMode);
+  }, [darkMode]);
+
   return (
-    <div className="bg-black p-4 z-20">
+    <div className={`bg-${darkMode ? "black" : "white"} p-4 z-20 shadow-lg`}>
       <div className="max-w-[1240px] py-2  flex justify-between items-center mx-auto">
         <div className="flex items-center space-x-2">
           <span className="text-3xl text-red-500 hover:text-red-600 hover:cursor-pointer font-bold">
-            <BiMoviePlay className="inline text-4xl" />ReactShowTime
+            <BiMoviePlay className="inline text-4xl" />
+            ReactShowTime
           </span>
           <div className="hidden md:block">
             <ul className="flex space-x-6 text-red-500 font-semibold">
@@ -51,14 +58,6 @@ const Nav = () => {
           </div>
         </div>
 
-        {/* <div className="hidden md:flex items-center space-x-4">
-          <input
-            type="text"
-            className="bg-gray-800 text-gray-200 px-3 py-2 rounded-md placeholder-gray-500 focus:outline-none focus:ring focus:border-red-500"
-            placeholder="Search..."
-          />
-          <BsSearch className="text-red-500 text-2xl cursor-pointer" />
-        </div> */}
         <div className="hidden md:flex items-center space-x-4">
           {isAuthenticated ? (
             <>
@@ -69,7 +68,7 @@ const Nav = () => {
                 className="w-8 h-8 rounded-full ml-10 cursor-pointer"
               />
               {/* Username */}
-              <span className="text-white ml-2">{user.name}</span>
+              <span className="text-[#ef4444] ml-2">{user.name}</span>
               {/* Logout button */}
               <button
                 onClick={() => logout({ returnTo: window.location.origin })}
@@ -89,7 +88,6 @@ const Nav = () => {
           )}
         </div>
 
-        {/* Hamburger */}
         <div className="md:hidden">
           {toggle ? (
             <AiOutlineClose
@@ -104,10 +102,24 @@ const Nav = () => {
           )}
         </div>
 
-        {/* Mobile menu */}
+        <div className="hidden md:flex items-center space-x-4">
+          <button
+            onClick={() => setDarkMode(!darkMode)}
+            className={`px-3 py-1 text-sm rounded-md ${
+              darkMode ? "bg-white text-black" : "bg-black text-white"
+            }`}
+          >
+            {darkMode ? "Light Mode" : "Dark Mode"}
+          </button>
+        </div>
+
         <ul
-          className={`duration-500 md:hidden w-full h-screen text-red-500 font-semibold fixed bg-black backdrop-filter backdrop-blur-sm bg-opacity-90 top-[5rem] ${
-            toggle ? 'left-0' : '-left-full'
+          className={`duration-500 md:hidden w-full h-screen text-${
+            darkMode ? "dark" : "light"
+          }.font-semibold fixed bg-${
+            darkMode ? "dark" : "light"
+          }.backdrop-filter.backdrop-blur-sm bg-opacity-90 top-[5rem] ${
+            toggle ? "left-0" : "-left-full"
           }`}
         >
           {navlinks.map((link) => (
