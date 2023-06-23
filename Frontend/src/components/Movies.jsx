@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { useParams } from 'react-router-dom';
+import Loader from './Loader';
 
 export const Movies = () => {
   const { id } = useParams();
@@ -82,7 +83,7 @@ export const Movies = () => {
       </div>
     </div>
       ) : (
-        <h2>Not found: {id}</h2>
+        <Loader/>
       )}
     </>
   );
