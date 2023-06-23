@@ -1,5 +1,6 @@
 import React from 'react';
 import { useState,useEffect } from 'react';
+import { Link } from 'react-router-dom';
 
 const Latest = () => {
  
@@ -19,10 +20,10 @@ const Latest = () => {
     getData();
   }, []);
 
-  const handleMovieClick = (id) => {
-    // Perform navigation logic with the provided movie id
-    window.location.href = `/movies/${id}`;
-  };
+  // const handleMovieClick = (id) => {
+  //   // Perform navigation logic with the provided movie id
+    
+  // };
 
   return (
     <div className="bg-black w-full min-h-screen pt-10 text-white pb-10">
@@ -34,7 +35,6 @@ const Latest = () => {
             <div
               key={movie.id}
               className="relative group overflow-hidden border-r border-b border-red-700 rounded-md cursor-pointer"
-              onClick={() => handleMovieClick(movie.id)}
             >
               <div className="flex justify-center items-center">
                   <img
@@ -50,12 +50,14 @@ const Latest = () => {
                   <span className="text-white">{movie.rating}</span>
                 </div>
                 <p className="text-white mt-2 px-4 text-center">{movie.details}</p>
+                <Link to={`/movies/${movie.id}`}>
+
                 <button
                   className="mt-2 px-4 py-2 bg-red-500 text-white rounded-md"
-                  onClick={() => handleMovieClick(movie.id)}
                 >
                   Go to Movie
                 </button>
+                </Link>
               </div>
             </div>
           )})}

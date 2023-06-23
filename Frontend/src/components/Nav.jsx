@@ -1,4 +1,3 @@
-// Nav.js
 import React, { useState, useEffect } from "react";
 import { AiOutlineMenu, AiOutlineClose } from "react-icons/ai";
 import { BiMoviePlay } from "react-icons/bi";
@@ -9,6 +8,10 @@ import { Link } from "react-router-dom";
 const Nav = () => {
   const [toggle, setToggle] = useState(false);
   const [darkMode, setDarkMode] = useState(localStorage.getItem("darkMode") === "true");
+  
+  useEffect(() => {
+    localStorage.setItem("darkMode", darkMode);
+  }, [darkMode]);
 
   const { loginWithRedirect, logout, isAuthenticated, user } = useAuth0();
   const navlinks = [
@@ -20,27 +23,22 @@ const Nav = () => {
       title: "Search",
       link: "/search",
     },
-    {
-      title: "Buy",
-      link: "/buy",
-    },
-    {
-      title: "My Account",
-      link: "/account",
-    },
   ];
 
-  useEffect(() => {
-    localStorage.setItem("darkMode", darkMode);
-  }, [darkMode]);
+  const handleLogout = () => {
+    localStorage.clear();
+    logout({ returnTo: window.location.origin });
+  };
 
   return (
     <div className={`bg-${darkMode ? "black" : "white"} p-4 z-20 shadow-lg`}>
-      <div className="max-w-[1240px] py-2  flex justify-between items-center mx-auto">
+      <div className="max-w-[1240px] py-2 flex justify-between items-center mx-auto">
         <div className="flex items-center space-x-2">
           <span className="text-3xl text-red-500 hover:text-red-600 hover:cursor-pointer font-bold">
+          <Link to="/">
             <BiMoviePlay className="inline text-4xl" />
-            ReactShowTime
+              <span className="ml-1">ReactShowTime</span>
+            </Link>
           </span>
           <div className="hidden md:block">
             <ul className="flex space-x-6 text-red-500 font-semibold">
@@ -58,30 +56,37 @@ const Nav = () => {
           </div>
         </div>
 
-        <div className="hidden md:flex items-center space-x-4">
+        <div className="flex items-center space-x-4 ml-auto">
+          <button
+            onClick={() => setDarkMode(!darkMode)}
+            className={`px-3 py-1 text-sm rounded-md ${
+              darkMode ? "bg-white text-black" : "bg-black text-white"
+            }`}
+          >
+            {darkMode ? "Light Mode" : "Dark Mode"}
+          </button>
+
           {isAuthenticated ? (
             <>
-              {/* User avatar */}
-              <img
-                src={user.picture}
-                alt={user.name}
-                className="w-8 h-8 rounded-full ml-10 cursor-pointer"
-              />
-              {/* Username */}
-              <span className="text-[#ef4444] ml-2">{user.name}</span>
-              {/* Logout button */}
+              <Link to="/account">
+                <img
+                  src={user.picture}
+                  alt={user.name}
+                  className="w-8 h-8 rounded-full ml-2 cursor-pointer"
+                />
+              </Link>
+              <span className={`text-${darkMode ? "white" : "red-500"} ml-2`}>{user.name}</span>
               <button
-                onClick={() => logout({ returnTo: window.location.origin })}
+                onClick={handleLogout}
                 className="hover:text-red-600 hover:cursor-pointer ml-2"
               >
                 Logout
               </button>
             </>
           ) : (
-            // Login button
             <button
               onClick={() => loginWithRedirect()}
-              className="hover:text-red-600 hover:cursor-pointer ml-10"
+              className="hover:text-red-600 hover:cursor-pointer ml-2"
             >
               Login
             </button>
@@ -100,17 +105,6 @@ const Nav = () => {
               className="text-red-500 text-3xl block"
             />
           )}
-        </div>
-
-        <div className="hidden md:flex items-center space-x-4">
-          <button
-            onClick={() => setDarkMode(!darkMode)}
-            className={`px-3 py-1 text-sm rounded-md ${
-              darkMode ? "bg-white text-black" : "bg-black text-white"
-            }`}
-          >
-            {darkMode ? "Light Mode" : "Dark Mode"}
-          </button>
         </div>
 
         <ul

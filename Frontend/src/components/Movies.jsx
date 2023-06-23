@@ -1,15 +1,15 @@
 import React, { useState, useEffect } from 'react';
-import { useParams } from 'react-router-dom';
+import { Link, useParams } from 'react-router-dom';
 import Loader from './Loader';
 
 export const Movies = () => {
   const { id } = useParams();
   const [currentMovie, setCurrentMovie] = useState({});
  
-  const handleBuyTicket = (id) => {
-    // navigate to buy.jsx
-    window.location.href = `/buy`;
-  };
+  // const handleBuyTicket = (id) => {
+  //   // navigate to buy.jsx
+  //   window.location.href = `/buy`;
+  // };
 
 
   const getMovieInfo = async (id) => {
@@ -65,13 +65,15 @@ export const Movies = () => {
         {currentMovie.details}
         </p>
         {/* button to buy tickets*/}
+        <Link to={'/buy'}>
         <button className="inline-block mr-3 mt-4 px-4 py-2 bg-red-500 text-white rounded-md"
         onClick={() => {
-          handleBuyTicket(currentMovie.id);
+         
         }}
         >
           Buy Tickets
         </button>
+        </Link>
         <a
           href={currentMovie.trailerUrl}
           target="_blank"
