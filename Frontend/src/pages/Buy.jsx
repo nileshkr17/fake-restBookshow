@@ -198,7 +198,7 @@ export default function Buy() {
         </p>
       </div>
 
-      <div className="child2 bg-gray-100 p-4 rounded ">
+      <div className="child2 p-4 rounded bg-opacity-5	">
         <h2 className="text-lg font-bold mb-2">Selected Tickets</h2>
         {selectedSeats.length > 0 ? (
           <ul className="selected-tickets-list flex flex-wrap">

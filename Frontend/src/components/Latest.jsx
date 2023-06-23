@@ -25,7 +25,7 @@ const Latest = () => {
   };
 
   return (
-    <div className="bg-black w-full min-h-screen pt-10 text-white ">
+    <div className="bg-black w-full min-h-screen pt-10 text-white pb-10">
       <div className="max-w-7xl mx-auto px-4 sm:px-6">
         <h2 className="sm:text-3xl md:text-4xl lg:text-5xl font-bold pb-10 text-white">Latest Movies</h2>
 

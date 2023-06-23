@@ -78,7 +78,9 @@ body {
 .parent {
   display: flex;
   width: 90%;
-  border: red solid 1px;
+  /* border: red solid 1px; */
+  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+  border-radius: 20px;
 }
 .seat.occupied {
   background-color: red;
@@ -96,8 +98,8 @@ body {
 }
 
 .Movies {
-  margin-bottom: 24px;
-  margin-top: 24px;
+  margin-bottom: 20px;
+  margin-top: 10px;
 }
 
 .Movies select {
@@ -136,11 +138,26 @@ body {
 
 .Cinema .screen {
   height: 70px;
-  background: white;
+  background: rgba(255, 255, 255, 0.345);;
   width: 100%;
   transform: rotateX(-30deg) scale(1.1);
   box-shadow: 0 3px 10px 2px;
+  animation: screenAnimation 6s ease-in-out infinite;
 }
+
+@keyframes screenAnimation {
+  0% {
+    transform: rotateX(-20deg) scale(1.1);
+  }
+  50% {
+    transform: rotateX(-10deg) scale(1.2);
+  }
+  100% {
+    transform: rotateX(-20deg) scale(1.1);
+  }
+}
+
+
 
 .Cinema .seats {
   display: grid;
