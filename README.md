@@ -35,3 +35,17 @@ To run the application locally, follow these steps:
    bash
    cd movie-ticket-booking-app
    npm install
+
+
+
+
+3. Set up Auth0:
+
+   - Create an account on the Auth0 website.
+   - Configure your Auth0 application with the necessary settings for Google and GitHub login providers.
+   - Obtain the required client credentials (client ID and client secret) and configure them in the application.
+
+4. Set up the API:
+
+   - The application uses an API hosted at https://my-json-server.typicode.com/nileshkr17/api-bookmyshowSELF.
+   - Make sure the API is up and running before starting the application.
