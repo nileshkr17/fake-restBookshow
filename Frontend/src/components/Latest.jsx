@@ -33,14 +33,16 @@ const Latest = () => {
           {arr.map((movie) => { return (
             <div
               key={movie.id}
-              className="relative group overflow-hidden  border-r border-b border-red-700 rounded-md cursor-pointer"
+              className="relative group overflow-hidden border-r border-b border-red-700 rounded-md cursor-pointer"
               onClick={() => handleMovieClick(movie.id)}
             >
-              <img
-                src={movie.imageUrl}
-                alt="Latest movie"
-                className="object-contain object-center h-60 sm:h-80 md:h-30 lg:h-30 transition-opacity duration-300"
-              />
+              <div className="flex justify-center items-center">
+                  <img
+                    src={movie.imageUrl}
+                    alt="Latest movie"
+                    className="object-contain h-60 sm:h-80 md:h-30 lg:h-30 transition-opacity duration-300"
+                  />
+                </div>
               <div className="absolute inset-0 bg-black bg-opacity-50 backdrop-blur-md opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col items-center justify-center">
                 <p className="text-white text-lg font-bold">{movie.title}</p>
                 <div className="flex items-center">
