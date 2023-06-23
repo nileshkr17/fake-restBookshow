@@ -44,7 +44,7 @@ const Footer = () => {
     <footer className="bg-black py-4 shadow-lg border-t-4 border-slate-700">
       <div className="container mx-auto text-white text-center">
         <p className="text-white">
-          Made with ❤️ by <span className='italic'><a href={repoLink} className="text-white underline">
+          Made with ❤️ by <span className='italic'><a href={repoLink} className="text-white hover:underline">
           .gitignore
           </a></span>
           <br />

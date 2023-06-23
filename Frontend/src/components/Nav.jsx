@@ -15,8 +15,8 @@ const Nav = () => {
       link: '/',
     },
     {
-      title: 'Pricing',
-      link: '/pricing',
+      title: 'Search',
+      link: '/search',
     },
     {
       title: 'Buy',
