@@ -6,7 +6,7 @@ const MyAccount = () => {
   const { loginWithRedirect, logout, isAuthenticated, user } = useAuth0();
 
   return (
-    <div className="flex flex-col items-center justify-center w-[60%] mx-auto px-4 mt-3 py-8 bg-white rounded-lg shadow">
+    <div className="flex flex-col h-screen items-center justify-center w-[60%] mx-auto px-4 mt-3 py-8 bg-white rounded-lg shadow">
       {isAuthenticated ? (
         <>
           {/* User avatar */}
