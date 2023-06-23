@@ -21,7 +21,7 @@ const Latest = () => {
 
   const handleMovieClick = (id) => {
     // Perform navigation logic with the provided movie id
-    console.log('Navigating to movie with id:', id);
+    window.location.href = `/movies/${id}`;
   };
 
   return (
