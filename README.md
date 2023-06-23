@@ -12,3 +12,10 @@ This is a movie ticket booking application built with React. Users can log in us
 - JavaScript 🚀
 - Auth0 for authentication 🔐
 - React Router for routing 🌐
+
+
+## Screenshots
+
+Include a screenshot of your application here to give users a visual representation of the project.
+
+## Getting Started
