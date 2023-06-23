@@ -19,3 +19,11 @@ This is a movie ticket booking application built with React. Users can log in us
 Include a screenshot of your application here to give users a visual representation of the project.
 
 ## Getting Started
+
+
+To run the application locally, follow these steps:
+
+1. Clone the repository:
+
+   bash
+   git clone https://github.com/your-username/movie-ticket-booking-app.git
