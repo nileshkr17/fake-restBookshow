@@ -8,7 +8,7 @@ This is a movie ticket booking application built with React. Users can log in us
 ## Technologies Used
 
 - React ⚛️
-- HTML/CSS 🎨
+- HTML/CSS 🎨    
 - JavaScript 🚀
 - Auth0 for authentication 🔐
 - React Router for routing 🌐
@@ -27,3 +27,11 @@ To run the application locally, follow these steps:
 
    bash
    git clone https://github.com/your-username/movie-ticket-booking-app.git
+
+
+
+2. Install the dependencies:
+
+   bash
+   cd movie-ticket-booking-app
+   npm install
