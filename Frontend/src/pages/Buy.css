@@ -78,7 +78,6 @@ body {
 .parent {
   display: flex;
   width: 90%;
-  /* border: red solid 1px; */
   box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
   border-radius: 20px;
 }
