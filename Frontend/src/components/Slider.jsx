@@ -1,9 +1,11 @@
 import React, { useState, useEffect } from "react";
 import "../index.css";
+import Loader from "./Loader";
 
 const Slider = () => {
   const [currentSlide, setCurrentSlide] = useState(0);
   const [arr, setArr] = useState([]);
+  const [isLoading, setIsLoading] = useState(true);
 
   const getData = async () => {
     await fetch("https://my-json-server.typicode.com/nileshkr17/api-bookmyshowSELF/movies", {
@@ -13,6 +15,7 @@ const Slider = () => {
       .then((data) => {
         console.log(data);
         setArr(data);
+        setIsLoading(false); // Set loading state to false once data is fetched
       });
   };
 
@@ -34,9 +37,8 @@ const Slider = () => {
     setCurrentSlide((prevSlide) => (prevSlide === arr.length - 1 ? 0 : prevSlide + 1));
   };
 
-  // Check if arr is empty
-  if (arr.length === 0) {
-    return <div>Loading...</div>; // Replace with your loading state or fallback content
+  if (isLoading) {
+    return <Loader/>// Replace with your loader component or content
   }
 
   return (
@@ -52,7 +54,9 @@ const Slider = () => {
           <div className="absolute inset-0 flex items-center justify-center opacity-0 hover:opacity-100 transition-opacity duration-300">
             <div className="text-center rounded-md bg-clip-padding backdrop-filter backdrop-blur-sm bg-opacity-10 bg-black">
               <h2 className="text-lg font-bold text-white">{arr[currentSlide].title}</h2>
-            <div className="sm:mx-10 md:mx-40 lg:mx-40"><p className="text-sm text-white mt-2 px-4 text-center ">{arr[currentSlide].details}</p></div>  
+              <div className="sm:mx-10 md:mx-40 lg:mx-40">
+                <p className="text-sm text-white mt-2 px-4 text-center ">{arr[currentSlide].details}</p>
+              </div>
               <a
                 href={arr[currentSlide].trailerUrl}
                 target="_blank"
@@ -70,4 +74,3 @@ const Slider = () => {
 };
 
 export default Slider;
-
