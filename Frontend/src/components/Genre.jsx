@@ -65,7 +65,7 @@ const Search = () => {
       <div className="max-w-7xl mx-auto px-4 sm:px-6">
         <h2 className="sm:text-3xl md:text-4xl lg:text-5xl font-bold pb-10 text-white"> Movies Genre</h2>
             <p className="text-white text-center">
-              Contribute to our API:
+              Contribute to our API: 
               <a
                 href="https://my-json-server.typicode.com/nileshkr17/api-bookmyshowSELF"
                 target="_blank"
