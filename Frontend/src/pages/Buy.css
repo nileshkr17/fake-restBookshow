@@ -5,6 +5,75 @@
 *::before {
   box-sizing: border-box;
 }
+/* for smaller screen */
+@media (max-width: 768px) {
+  .parent {
+    flex-direction: column;
+  }
+  .child1 {
+    margin-right: 0;
+  }
+  .child2 {
+    margin-top: 24px;
+  }
+  .child2 p {
+    margin: 0;
+  }
+  .child2 .info {
+    margin-top: 0;
+  }
+  .child2 .info .count {
+    margin-right: 0;
+  }
+  .child2 .info .total {
+    margin-left: 6px;
+  }
+  .child2 .ticket-button {
+    margin-top: 0;
+  }
+  .child2 .total-amount {
+    margin-top: 0;
+  }
+}
+/* for larger screen */
+@media (min-width: 769px) {
+  .parent {
+    flex-direction: row;
+  }
+  .child1 {
+    margin-right: 30px;
+  }
+  .child2 {
+    margin-top: 0;
+  }
+  .child2 p {
+    margin: 8px 0;
+  }
+  .child2 .info {
+    margin-top: 12px;
+  }
+  .child2 .info .count {
+    margin-right: 6px;
+  }
+  .child2 .info .total {
+    margin-left: 0;
+  }
+  .child2 .ticket-button {
+    margin-top: 16px;
+  }
+  .child2 .total-amount {
+    margin-top: 16px;
+  }
+}
+
+body {
+  font-family: 'Exo 2', sans-serif;
+  background-color: #f5f5f5;
+  color: #7e7e7e;
+  margin: 0;
+  padding: 0;
+}
+
 
 .parent {
   display: flex;
@@ -75,7 +144,7 @@
 
 .Cinema .seats {
   display: grid;
-  grid-gap: 19px;
+  grid-gap: 15px;
   width: 100%;
   grid-template-columns: repeat(8, min-content);
   justify-content: center;

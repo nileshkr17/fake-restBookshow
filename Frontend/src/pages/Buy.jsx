@@ -65,14 +65,13 @@ export default function Buy() {
 
       // Redirect to the ticket page
       window.location.href = '/ticket';
-    } else {
-      alert('Please enter a valid customer name and pin (123)');
     }
+
   };
 
   return (
     <div className="parent grid justify-center mx-auto my-10">
-      <div className="child1 p-4 border border-black">
+      <div className="child1 p-4 ">
         <div className="Movies mb-6">
           <label htmlFor="movie" className="mb-2">
             Pick a movie
@@ -146,94 +145,101 @@ export default function Buy() {
           </div>
         </div>
         <p className="info">
-         
           <div className="seatno mr-4">
             {selectedSeats.length ? (
-              <div> Selected <span className="count text-green-500 m-1"> {selectedSeats.length}</span> seat
-              {selectedSeats.length !== 1 && 's'} for the price of{' '}
-              <span className="total text-green-500 m-1">₹{selectedSeats.length * selectedMovie.price}</span>
-              <br/> <span>Seat No: {selectedSeats.join(', ')}</span></div>
-              
+              <div>
+                Selected
+                <span className="count text-green-500 m-1"> {selectedSeats.length}</span> seat
+                {selectedSeats.length !== 1 && 's'} for the price of{' '}
+                <span className="total text-green-500 m-1">₹{selectedSeats.length * selectedMovie.price}</span>
+                <br /> <span>Seat No: {selectedSeats.join(', ')}</span>
+              </div>
             ) : (
-              <h4 className='text-orange-500'>*Seats not selected</h4>
+              <h4 className="text-orange-500">*Seats not selected</h4>
             )}
           </div>
         </p>
       </div>
 
-      <div className="child2 bg-gray-100 p-4 rounded border border-black">
-  <h2 className="text-lg font-bold mb-2">Selected Tickets</h2>
-  {selectedSeats.length > 0 ? (
-    <ul className="selected-tickets-list flex flex-wrap">
-      {selectedSeats.map((seat, index) => (
-        <li key={seat} className="mb-2 mr-2">
-          <span className="font-bold">Seat No:</span> {seat}
-        </li>
-      ))}
-    </ul>
-  ) : (
-    <p>No tickets selected</p>
-  )}
-  {selectedSeats.length > 0 && (
-    <div className="info">
-      <span className="count font-bold">Selected Seats:</span>
-      <span className="total font-bold">{selectedSeats.length}</span>
-    </div>
-  )}
-  {selectedSeats.length > 0 && (
-    <div className="info">
-      <span className="count font-bold">Total Amount:</span>
-      <span className="total font-bold">₹{selectedSeats.length * selectedMovie.price}</span>
-    </div>
-  )}
+      <div className="child2 bg-gray-100 p-4 rounded ">
+        <h2 className="text-lg font-bold mb-2">Selected Tickets</h2>
+        {selectedSeats.length > 0 ? (
+          <ul className="selected-tickets-list flex flex-wrap">
+            {selectedSeats.map((seat, index) => (
+              <li key={seat} className="mb-2 mr-2">
+                <span className="font-bold">Seat No:</span> {seat}
+              </li>
+            ))}
+          </ul>
+        ) : (
+          <p>No tickets selected</p>
+        )}
+        {selectedSeats.length > 0 && (
+          <div className="info">
+            <span className="count font-bold">Selected Seats:</span>
+            <span className="total font-bold">{selectedSeats.length}</span>
+          </div>
+        )}
+        {selectedSeats.length > 0 && (
+          <div className="info">
+            <span className="count font-bold">Total Amount:</span>
+            <span className="total font-bold">₹{selectedSeats.length * selectedMovie.price}</span>
+          </div>
+        )}
 
-  <div className="date-time-picker mt-4">
-    <label htmlFor="datetime" className="block font-bold mb-2">
-      Date and Time
-    </label>
-    <DatePicker
-      id="datetime"
-      selected={selectedDateTime}
-      onChange={(date) => setSelectedDateTime(date)}
-      showTimeSelect
-      timeFormat="HH:mm"
-      timeIntervals={15}
-      dateFormat="MMMM d, yyyy h:mm aa"
-      placeholderText="Select Date and Time"
-      className="p-2 border rounded"
-    />
-  </div>
+        {selectedSeats.length >= 4 && <p className="text-black bg-red-300 p-2 rounded">You cannot select more than 4 seats.</p>}
 
-  <div className="customer-details mt-4">
-    <label htmlFor="customerName" className="block font-bold mb-2">
-      Customer Name
-    </label>
-    <input
-      type="text"
-      id="customerName"
-      value={customerName}
-      onChange={(e) => setCustomerName(e.target.value)}
-      placeholder="Enter your name"
-      className="p-2 border rounded w-full"
-    />
-    <label htmlFor="pin" className="block font-bold mt-2 mb-2">
-      PIN (123)
-    </label>
-    <input
-      type="password"
-      id="pin"
-      value={pin}
-      onChange={(e) => setPin(e.target.value)}
-      placeholder="Enter PIN"
-      className="p-2 border rounded w-full"
-    />
-  </div>
+        <div className="DateTime mt-6">
+          <label htmlFor="datetime" className="block mb-2">
+            Select Date and Time
+          </label>
+          <DatePicker
+            id="datetime"
+            selected={selectedDateTime}
+            onChange={date => setSelectedDateTime(date)}
+            showTimeSelect
+            timeFormat="HH:mm"
+            timeIntervals={15}
+            dateFormat="MMMM d, yyyy h:mm aa"
+            className="p-2 border rounded"
+          />
+        </div>
 
-  <button className="btn-confirm mt-4" onClick={handleCustomerDetails}>
-    Confirm Booking
-  </button>
-</div>
+        <div className="CustomerDetails mt-6">
+          <label htmlFor="customerName" className="block mb-2">
+            Customer Name
+          </label>
+          <input
+            type="text"
+            id="customerName"
+            value={customerName}
+            onChange={e => setCustomerName(e.target.value)}
+            className="p-2 border rounded"
+          />
 
+          <label htmlFor="pin" className="block mt-4 mb-2">
+            Pin (123)
+          </label>
+          <input
+            type="password"
+            id="pin"
+            value={pin}
+            onChange={e => setPin(e.target.value)}
+            className="p-2 border rounded"
+          />
+        </div>
+
+        <button
+  className={clsx('confirm-button', selectedSeats.length === 0 && 'disabled', 'py-2 px-4 mt-10 rounded bg-blue-500 text-white hover:bg-blue-600')}
+  onClick={handleCustomerDetails}
+  disabled={selectedSeats.length === 0 || selectedSeats.length > 4}
+>
+  Confirm Booking
+</button>
+
+
+        {customerName && pin !== '123' && <p className="text-red-500 mt-2">Invalid pin. Please enter the correct pin (123).</p>}
+      </div>
     </div>
   );
 }
