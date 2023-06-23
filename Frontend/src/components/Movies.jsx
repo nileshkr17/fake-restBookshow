@@ -1,36 +1,78 @@
-import React from 'react';
-import '../App.css';
+import React, { useState, useEffect } from 'react';
+import { useParams } from 'react-router-dom';
 
 export const Movies = () => {
+  const { id } = useParams();
+  const [currentMovie, setCurrentMovie] = useState({});
+ 
+  const handleBuyTicket = (id) => {
+    // navigate to buy.jsx
+    window.location.href = `/buy`;
+  };
+
+
+  const getMovieInfo = async (id) => {
+      const url = `https://my-json-server.typicode.com/nileshkr17/api-bookmyshowSELF/movies/${id}`;
+      console.log(url);
+      const response = await fetch(url, {
+        method: 'GET',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+      });
+      if (!response.ok) {
+        throw new Error('Failed to fetch movie');
+      }
+      const data = await response.json();
+      setCurrentMovie(data);
+     
+  };
+
+  useEffect(() => {
+    console.log('Effect triggered. ID:', id);
+    getMovieInfo(id);
+  }, [id]);
+
+  useEffect(() => {
+    console.log('Current movie:', currentMovie);
+  }, [currentMovie]);
+
   return (
-    <div
-      className="flex gap-5 p-6"
+    <>
+      {Object.keys(currentMovie).length ? (
+      //  map in the object
+      <div
+      className="flex gap-5 p-6 h-screen"
       style={{
-        backgroundImage: `linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url(https://m.media-amazon.com/images/M/MV5BYWJkZGMxYjUtNDdkMC00MDQxLWI2M2QtZmM2ZGIyODYyZDc3XkEyXkFqcGdeQXVyMTA3MDk2NDg2._V1_.jpg)`,
+        backgroundImage: `linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url(${currentMovie.imageUrl})`,
         backgroundRepeat: 'no-repeat',
         backgroundSize: 'cover',
         backgroundPosition: 'center',
-        height: '70vh',
       }}
     >
       <div
         className=" rounded-md bg-clip-padding backdrop-filter backdrop-blur-sm bg-opacity-10 bg-black mt-40 pl-6 pb-4 "
         style={{ width: '70%' }}
       >
-        <h3 className="text-4xl font-bold text-white">Spider-Man: Across the Spider-Verse</h3>
+        <h3 className="text-4xl font-bold text-white">{currentMovie.title}</h3>
         <div className="flex gap-2 mt-3">
           <h3>
-            <span className="text-slate-500">Genre</span>
+            <span className="text-slate-500"></span>
           </h3>
         </div>
         <p className="text-white mt-15 leading-[1.5rem]">
-          Miles Morales catapults across the Multiverse, where he encounters a team of Spider-People charged with
-          protecting its very existence. When the heroes clash on how to handle a new threat, Miles must redefine what it
-          means to be a hero.
+        {currentMovie.details}
         </p>
-        <p className="text-red-500 font-bold">Releasing soon</p>
+        {/* button to buy tickets*/}
+        <button className="inline-block mr-3 mt-4 px-4 py-2 bg-red-500 text-white rounded-md"
+        onClick={() => {
+          handleBuyTicket(currentMovie.id);
+        }}
+        >
+          Buy Tickets
+        </button>
         <a
-          href=""
+          href={currentMovie.trailerUrl}
           target="_blank"
           rel="noopener noreferrer"
           className="inline-block mt-4 px-4 py-2 bg-red-500 text-white rounded-md"
@@ -39,5 +81,10 @@ export const Movies = () => {
         </a>
       </div>
     </div>
+      ) : (
+        <h2>Not found: {id}</h2>
+      )}
+    </>
   );
 };
+

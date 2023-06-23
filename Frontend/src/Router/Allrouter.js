@@ -6,6 +6,7 @@ import MyAccount from '../pages/MyAccount'
 import NotFound from '../pages/NotFound'
 import Home from '../pages/Home'
 import Ticket from '../pages/Ticket'
+import { Movies } from '../components/Movies'
 
 const Allrouter = () => {
   return (
@@ -16,6 +17,7 @@ const Allrouter = () => {
         <Route path="/buy" element={<Buy/>} />
         <Route path="/account" element={<MyAccount/>} />
         <Route path='/ticket' element={<Ticket/>} />
+        <Route path='/movies/:id' element={<Movies/>} />
         <Route path="*" element={<NotFound />} />
     </Routes>
     </>
