@@ -49,3 +49,24 @@ To run the application locally, follow these steps:
 
    - The application uses an API hosted at https://my-json-server.typicode.com/nileshkr17/api-bookmyshowSELF.
    - Make sure the API is up and running before starting the application.
+
+
+
+5. Start the development server:
+
+   bash
+   npm start
+   
+
+6. Open the application in your browser:
+
+   bash
+   http://localhost:3000
+   
+
+## Features
+
+- User authentication with Auth0 🔒
+- Movie selection based on user location 🌍
+- Ticket generation with seat details 🎟
+- Ability to download the ticket with a user-friendly UI 💻
