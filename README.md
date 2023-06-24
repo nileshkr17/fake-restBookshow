@@ -1,6 +1,8 @@
 # 🎬 Movie Ticket Booking App
 
-![App Screenshot](screenshot.png)
+![App Screenshot]!<br>
+<img src="https://github.com/Sonali12b/fake-restBookshow/assets/84281582/ff07d3d3-34b1-48b3-94c6-4c0791d68ade" alt="Laptop Screen">
+
 
 This is a movie ticket booking application built with React. Users can log in using Auth0 with Google 📧 and GitHub 🐙 accounts. Once logged in, they can view their ticket if it is available. Otherwise, they can see their user details fetched from Auth0 and book a new ticket.
 
@@ -16,7 +18,27 @@ This is a movie ticket booking application built with React. Users can log in us
 
 ## Screenshots
 
-Include a screenshot of your application here to give users a visual representation of the project.
+### Laptop Screen
+<br>
+<img src="https://github.com/Sonali12b/fake-restBookshow/assets/84281582/74cd6f70-a0b0-4412-99e6-865618a494e3" alt="Laptop Screen">
+<br>
+<img src="https://github.com/Sonali12b/fake-restBookshow/assets/84281582/b64c5e02-a085-418f-826f-92bcb6fcefe8" alt="Laptop Screen">
+<br>
+<img src="https://github.com/Sonali12b/fake-restBookshow/assets/84281582/fe37cb6d-ff73-4bce-8221-47651f92d9c9" alt="Laptop Screen">
+<br>
+<img src="https://github.com/Sonali12b/fake-restBookshow/assets/84281582/4c9ab1c1-398e-449d-a6a9-4d646b939d43" alt="Laptop Screen">
+<br>
+<img src="https://github.com/Sonali12b/fake-restBookshow/assets/84281582/7401d2fb-e260-41b7-b074-15108442b95a" alt="Laptop Screen">
+<br>
+<img src="https://github.com/Sonali12b/fake-restBookshow/assets/84281582/d9da4f44-780c-4928-a536-254108b9e6e5" alt="Laptop Screen">
+
+
+### Mobile Screen
+![ezgif com-video-to-gif](https://github.com/Sonali12b/fake-restBookshow/assets/84281582/ad975811-8b0c-4f4a-9721-74f1783a4207)
+
+<br>
+
+![ezgif com-video-to-gifsad](https://github.com/Sonali12b/fake-restBookshow/assets/84281582/05c6271e-98de-4e54-95d9-e9a18b4e595d)
 
 ## Getting Started
 
