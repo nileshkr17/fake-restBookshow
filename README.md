@@ -6,6 +6,8 @@
 
 This is a movie ticket booking application built with React. Users can log in using Auth0 with Google 📧 and GitHub 🐙 accounts. Once logged in, they can view their ticket if it is available. Otherwise, they can see their user details fetched from Auth0 and book a new ticket.
 
+## Engagement
+![image](https://github.com/nileshkr17/fake-restBookshow/assets/77370375/37d69a57-5fa8-4f2e-ac79-d185fc6abeba)
 
 ## Technologies Used
 
