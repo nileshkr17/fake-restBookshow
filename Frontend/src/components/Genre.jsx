@@ -7,7 +7,6 @@ const Search = () => {
   const [movies, setMovies] = useState([]);
   const [filteredMovies, setFilteredMovies] = useState([]);
   const [isLoading, setIsLoading] = useState(true);
-  const [selectedGenre, setSelectedGenre] = useState(null);
   const [darkMode, setDarkMode] = useState(localStorage.getItem('darkMode') === 'true');
 
   const getData = async () => {
@@ -24,36 +23,12 @@ const Search = () => {
     getData();
   }, []);
 
-  
-
-  const handleSearch = (e) => {
-    const search = e.target.value;
-    if (search.trim() === '') {
-      setFilteredMovies(movies);
-    } else {
-      const filtered = movies.filter((movie) =>
-        movie.title.toLowerCase().includes(search.toLowerCase())
-      );
-      setFilteredMovies(filtered);
-    }
-  };
-
   useEffect(() => {
     document.documentElement.setAttribute('data-theme', darkMode ? 'dark' : 'light');
     localStorage.setItem('darkMode', darkMode.toString());
   }, [darkMode]);
 
-  const filterMoviesByGenre = (genre) => {
-    if (genre === selectedGenre) {
-      setSelectedGenre(null);
-      setFilteredMovies(movies);
-    } else {
-      setSelectedGenre(genre);
-      const filtered = movies.filter((movie) => movie.genre === genre);
-      setFilteredMovies(filtered);
-    }
-  };
-
+  
   if (isLoading) {
     return <Loader />; // Replace with your loader component or content
   }

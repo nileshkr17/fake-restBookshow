@@ -6,14 +6,14 @@ import { FiPlus } from 'react-icons/fi';
 import { Link } from 'react-router-dom';
 
 const MyAccount = () => {
-  const { loginWithRedirect, logout, isAuthenticated, user } = useAuth0();
+  const { loginWithRedirect, isAuthenticated, user } = useAuth0();
   const storedCustomerName = JSON.parse(localStorage.getItem('customerName'));
   const storedMovieName = JSON.parse(localStorage.getItem('movieName')) || '';
   const storedTime = JSON.parse(localStorage.getItem('time'))?.slice(0, 21);
   const storedSeatNumber = JSON.parse(localStorage.getItem('seatNumber'));
   const [selectedTags, setSelectedTags] = useState([]);
 
-  const seatNumbers = storedSeatNumber ? storedSeatNumber.split(',').map(Number) : [];
+  // const seatNumbers = storedSeatNumber ? storedSeatNumber.split(',').map(Number) : [];
 
   const genreTags = [
     { label: 'Action', color: 'red' },

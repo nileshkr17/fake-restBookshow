@@ -23,6 +23,9 @@ const Slider = () => {
     getData();
   }, []);
 
+
+
+
   useEffect(() => {
     const timer = setTimeout(() => {
       goToNextSlide();
@@ -33,12 +36,15 @@ const Slider = () => {
     };
   }, [currentSlide]);
 
+
+
+  
   const goToNextSlide = () => {
     setCurrentSlide((prevSlide) => (prevSlide === arr.length - 1 ? 0 : prevSlide + 1));
   };
 
   if (isLoading) {
-    return <Loader/>// Replace with your loader component or content
+    return <Loader/>
   }
 
   return (

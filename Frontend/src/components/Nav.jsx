@@ -67,7 +67,7 @@ const Nav = () => {
           </button>
 
           {isAuthenticated ? (
-            <>
+            <div className="hidden md:block">
               <Link to="/account">
                 <img
                   src={user.picture}
@@ -82,11 +82,11 @@ const Nav = () => {
               >
                 Logout
               </button>
-            </>
+            </div>
           ) : (
             <button
               onClick={() => loginWithRedirect()}
-              className="hover:text-red-600 hover:cursor-pointer ml-2"
+              className="hover:text-red-600 hidden md:block hover:cursor-pointer ml-2"
             >
               Login
             </button>
@@ -112,7 +112,7 @@ const Nav = () => {
             darkMode ? "dark" : "light"
           }.font-semibold fixed bg-${
             darkMode ? "dark" : "light"
-          }.backdrop-filter.backdrop-blur-sm bg-opacity-90 top-[5rem] ${
+          }.backdrop-filter.backdrop-blur-sm bg-opacity-0 z-50 top-[5rem] ${
             toggle ? "left-0" : "-left-full"
           }`}
         >
@@ -126,7 +126,38 @@ const Nav = () => {
               </Link>
             </li>
           ))}
-        </ul>
+        
+        {/*  */}
+        {isAuthenticated ? (
+          <>
+           <Link to="/account">
+                <img
+                  src={user.picture}
+                  alt={user.name}
+                  className="w-8 h-8 rounded-full ml-2 cursor-pointer"
+                />
+              </Link>
+          <div className="md:hidden p-5">
+             
+              <span className={`text-${darkMode ? "white" : "red-500"} ml-2`}>{user.name}</span>
+              <button
+                onClick={handleLogout}
+                className="hover:text-red-600 hover:cursor-pointer ml-5"
+              >
+                Logout
+              </button>
+            </div>
+          </>
+            
+          ) : (
+            <button
+              onClick={() => loginWithRedirect()}
+              className="hover:text-red-600 md:hidden hover:cursor-pointer mt-4 ml-5"
+            >
+              Login
+            </button>
+          )}
+          </ul>
       </div>
     </div>
   );
