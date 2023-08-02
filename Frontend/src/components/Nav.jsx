@@ -57,14 +57,14 @@ const Nav = () => {
         </div>
 
         <div className="flex items-center space-x-4 ml-auto">
-          <button
+          {/* <button
             onClick={() => setDarkMode(!darkMode)}
             className={`px-3 py-1 text-sm rounded-md ${
               darkMode ? "bg-white text-black" : "bg-black text-white"
             }`}
           >
             {darkMode ? "Light Mode" : "Dark Mode"}
-          </button>
+          </button> */}
 
           {isAuthenticated ? (
             <div className="hidden md:block">

@@ -85,6 +85,7 @@ export default function Buy() {
             <label htmlFor="movie" className="mb-2">
               Pick a movie
             </label>
+        
 
             <select
               id="movie"
