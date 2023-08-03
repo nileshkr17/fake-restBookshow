@@ -1,4 +1,3 @@
-
 import React, { useState } from 'react';
 import { useAuth0 } from '@auth0/auth0-react';
 import { PaperClipIcon } from '@heroicons/react/outline';
@@ -13,8 +12,6 @@ const MyAccount = () => {
   const storedSeatNumber = JSON.parse(localStorage.getItem('seatNumber'));
   const [selectedTags, setSelectedTags] = useState([]);
 
-  // const seatNumbers = storedSeatNumber ? storedSeatNumber.split(',').map(Number) : [];
-
   const genreTags = [
     { label: 'Action', color: 'red' },
     { label: 'Adventure', color: 'blue' },
@@ -28,7 +25,7 @@ const MyAccount = () => {
   };
 
   return (
-    <div className="flex flex-col h-screen items-center justify-center w-[60%] mx-auto px-4 mt-3 py-8 bg-white rounded-lg shadow">
+    <div className="flex flex-col h-screen items-center justify-center w-full sm:w-[60%] mx-auto px-4 mt-3 py-8 bg-white rounded-lg shadow">
       {isAuthenticated ? (
         <>
           {/* User avatar */}
@@ -59,7 +56,7 @@ const MyAccount = () => {
               <div className="px-4 py-6 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-0">
                 <dt className="text-sm font-medium leading-6 text-gray-900">Genre</dt>
                 <dd className="mt-1 text-sm leading-6 text-gray-700 sm:col-span-2 sm:mt-0">
-                  <div className="flex gap-2">
+                  <div className="flex gap-2 flex-wrap">
                     {genreTags.map((tag) => (
                       <div
                         key={tag.label}
@@ -82,7 +79,7 @@ const MyAccount = () => {
                     <li className="flex items-center justify-between py-4 pl-4 pr-5 text-sm leading-6">
                       <div className="flex w-0 flex-1 items-center">
                         <PaperClipIcon className="h-5 w-5 flex-shrink-0 text-gray-400" aria-hidden="true" />
-                        <div className="ml-4 flex min-w-0  flex-1 gap-2">
+                        <div className="ml-4 flex min-w-0 flex-1 gap-2">
                           {/* Fetch ticket details from local storage */}
                           <span className="">{storedCustomerName}</span>
                           <span className="">{storedMovieName}</span>
@@ -92,9 +89,9 @@ const MyAccount = () => {
                       </div>
                       <div className="ml-4 flex-shrink-0">
                         <Link to="/ticket">
-                        <li className="font-medium text-indigo-600 hover:text-indigo-500">
-                          Download
-                        </li>
+                          <li className="font-medium text-indigo-600 hover:text-indigo-500">
+                            Download
+                          </li>
                         </Link>
                       </div>
                     </li>

@@ -26,9 +26,9 @@ const Ticket = () => {
 
   return (
     <div className="flex items-center justify-center h-screen">
-      <div className="ticket-container sm:mt-[10rem]">
+      <div className="ticket-container w-full sm:w-5/6 md:w-4/6 lg:w-3/6 xl:w-2/6 sm:mt-[10rem]">
         <div className="ticket" ref={ticketRef}>
-          <div className="card card-left w-64 sm:w-72 md:w-96">
+          <div className="card card-left w-full sm:w-72 md:w-96">
             <h1 className="text-xl font-bold">Movie Cinema</h1>
             <div className="title">
               <h2 className="text-sm text-gray-600">{storedMovieName}</h2>
@@ -48,7 +48,7 @@ const Ticket = () => {
             <div className="number">
               <h3 className="text-2xl font-bold">
                 {seatNumbers.map((seatNumber, index) => (
-                  <span key={index} className="seat-number  text-black">
+                  <span key={index} className="seat-number text-black">
                     {seatNumber}
                   </span>
                 ))}
@@ -70,7 +70,7 @@ const Ticket = () => {
           Download Ticket
         </button>
 
-        <div className="contact-info">
+        <div className="contact-info mt-4">
           <h2>Contact Information</h2>
           <p>
             Phone: 123-456-7890 <br />
@@ -79,7 +79,7 @@ const Ticket = () => {
           </p>
         </div>
 
-        <div className="terms-conditions">
+        <div className="terms-conditions mt-4">
           <h2>Terms and Conditions</h2>
           <p>
             Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor
